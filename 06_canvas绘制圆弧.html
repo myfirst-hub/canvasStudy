@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="600" height="600">
+    当前浏览器版本不支持，请升级浏览器
+  </canvas>
+  <script>
+    // 得到画布
+    var canvas = document.getElementById('myCanvas');
+    // 获取上下文
+    // 所有的图像绘制都是通过ctx的属性或者方法进行设置的，和canvas标签没有关系了
+    var ctx = canvas.getContext("2d");
+
+    // 创建一个路径
+    ctx.beginPath();
+    // arc参数(圆心X轴，圆心Y轴，半径，弧度【弧度=(Math.PI/180)*角度】，false表示顺时针【true表示逆时针】)
+    ctx.arc(200, 200, 100, 0, 2*Math.PI, false);
+    // 绘制
+    ctx.strokeStyle = 'red';
+    ctx.stroke();
+    // 填充
+    ctx.fillStyle = 'green';
+    ctx.fill();
+    </script>
+</body>
+</html>
